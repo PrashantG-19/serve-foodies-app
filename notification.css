@@ -1,0 +1,38 @@
+/* Notification Toast */
+.notification-toast {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100px);
+    background: var(--bg-card);
+    border: 1px solid var(--success);
+    padding: 15px 20px;
+    border-radius: var(--radius);
+    box-shadow: 0 10px 40px rgba(46, 204, 113, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    z-index: 1000;
+    transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    width: 90%;
+    max-width: 400px;
+}
+
+.notification-toast.show {
+    transform: translateX(-50%) translateY(0);
+}
+
+.notification-icon {
+    font-size: 2rem;
+    color: var(--success);
+}
+
+.notification-content h4 {
+    margin-bottom: 2px;
+    color: var(--text-main);
+}
+
+.notification-content p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}

@@ -15,6 +15,7 @@ const VENDORS = [
         id: 1,
         name: 'Fast Food Hub',
         desc: 'Burgers, Fries & Shakes',
+        rating: 4.8,
         image: 'vendor_fast_food.png',
         menu: [
             { id: 101, name: 'Classic Burger', price: 199, image: 'vendor_fast_food.png' },
@@ -27,6 +28,7 @@ const VENDORS = [
         id: 2,
         name: 'Spicy Kitchen',
         desc: 'Authentic Curries & Spice',
+        rating: 4.5,
         image: 'vendor_spicy_kitchen.png',
         menu: [
             { id: 201, name: 'Red Curry', price: 299, image: 'vendor_spicy_kitchen.png' },
@@ -39,6 +41,7 @@ const VENDORS = [
         id: 3,
         name: 'Yummy Bites',
         desc: 'Desserts & Sweet Treats',
+        rating: 4.9,
         image: 'vendor_yummy_bites.png',
         menu: [
             { id: 301, name: 'Lava Cake', price: 189, image: 'vendor_yummy_bites.png' },
@@ -84,6 +87,19 @@ const triggerHaptic = () => {
     }
 };
 
+// Helper to generate star HTML
+const generateStars = (rating) => {
+    const fullStars = Math.floor(rating);
+    const hasHalf = rating % 1 >= 0.5;
+    let html = '';
+    for (let i = 0; i < 5; i++) {
+        if (i < fullStars) html += '<span class="star filled">★</span>';
+        else if (i === fullStars && hasHalf) html += '<span class="star filled">★</span>'; // Simplified half star
+        else html += '<span class="star">★</span>';
+    }
+    return `<div class="star-rating-display" style="color:#FFD700; font-size:0.9rem;">${html} <span style="color:var(--text-muted); font-size:0.8rem; margin-left:4px;">(${rating})</span></div>`;
+};
+
 // Render Functions
 function render() {
     app.innerHTML = '';
@@ -94,7 +110,7 @@ function render() {
 
     header.innerHTML = `
         <div style="flex: 1; display: flex; align-items: center;">
-            ${showBack ? `<button class="btn btn-icon" style="color:white; font-size:1.5rem; padding:0;" id="backBtn">←</button>` : ''}
+            ${showBack ? `<button class="btn btn-icon" style="color:var(--text-main); font-size:1.5rem; padding:0;" id="backBtn">←</button>` : ''}
         </div>
         <h1 style="margin: 0;">Serve Smart</h1>
         <div style="flex: 1;"></div>
@@ -163,6 +179,7 @@ function renderVendorList() {
             <img src="${vendor.image}" class="vendor-img" alt="${vendor.name}">
             <div class="vendor-info">
                 <div class="vendor-name">${vendor.name}</div>
+                ${generateStars(vendor.rating)}
                 <div class="vendor-desc">${vendor.desc}</div>
             </div>
         `;
@@ -354,10 +371,33 @@ function renderSuccess() {
             </div>
 
             <button class="btn btn-secondary" onclick="resetApp()">Order More</button>
+            
+            <!-- Feedback Form -->
+            <div id="feedback-section" style="margin-top: 30px; border-top: 1px solid var(--border); padding-top: 20px;">
+                <h3>Rate your experience</h3>
+                <div class="star-rating-input" style="font-size: 2rem; color: #ddd; cursor: pointer; margin: 10px 0;">
+                    <span onclick="rateStar(1)">★</span><span onclick="rateStar(2)">★</span><span onclick="rateStar(3)">★</span><span onclick="rateStar(4)">★</span><span onclick="rateStar(5)">★</span>
+                </div>
+                <textarea id="feedback-text" class="input-field" placeholder="Tell us what you liked..." rows="3"></textarea>
+                <button class="btn btn-primary" onclick="submitFeedback()" style="margin-top: 10px;">Submit Feedback</button>
+            </div>
         </div>
     `;
     return div;
 }
+
+window.rateStar = function (n) {
+    const stars = document.querySelectorAll('.star-rating-input span');
+    stars.forEach((s, i) => {
+        s.style.color = i < n ? '#FFD700' : '#ddd';
+    });
+};
+
+window.submitFeedback = function () {
+    triggerHaptic();
+    document.getElementById('feedback-section').innerHTML = '<p style="color:var(--success); font-weight:bold;">Thank you for your feedback!</p>';
+    showNotification('Feedback Sent', 'Thanks for helping us improve!');
+};
 
 // Actions
 function setState(newState) {

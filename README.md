@@ -1,8 +1,8 @@
-# 🚀 Serve Smart App
+# 🚀 Serve Quick Meal App
 
-[Live Demo](https://prashantg-19.github.io/serve-smart-app/) 🌐
+[Live Demo](https://prashantg-19.github.io/serve-quickmeal-app/) 🌐
 
-Serve Smart is a **web application** that helps users access and interact with key services **efficiently and intuitively** via a polished online interface. Whether it’s booking, service discovery, task tracking, or managing workflows, this app aims to simplify everyday tasks with a responsive and user-friendly experience.
+Serve Quick Meal is a **web application** that helps users access and interact with key services **efficiently and intuitively** via a polished online interface. Whether it’s booking, service discovery, task tracking, or managing workflows, this app aims to simplify everyday tasks with a responsive and user-friendly experience.
 
 🌟 Built with modern frontend technologies and deployed using GitHub Pages.
 

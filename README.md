@@ -1,8 +1,8 @@
-# 🚀 Serve Quick Meal App
+# 🚀 Serve Foodies App
 
 [Live Demo](https://prashantg-19.github.io/serve-quickmeal-app/) 🌐
 
-Serve Quick Meal is a **web application** that helps users access and interact with key services **efficiently and intuitively** via a polished online interface. Whether it’s booking, service discovery, task tracking, or managing workflows, this app aims to simplify everyday tasks with a responsive and user-friendly experience.
+Serve Foodies is a **web application** that helps users access and interact with key services **efficiently and intuitively** via a polished online interface. Whether it’s booking, service discovery, task tracking, or managing workflows, this app aims to simplify everyday tasks with a responsive and user-friendly experience.
 
 🌟 Built with modern frontend technologies and deployed using GitHub Pages.
 
@@ -29,7 +29,7 @@ Serve Quick Meal is a **web application** that helps users access and interact w
 ## 📁 Project Structure
 
 ```text
-serve-smart-app/
+serve-foodies-app/
 ├── index.html               # Main entry point
 ├── assets/                  # Images, icons & styles
 ├── css/                     # App styling

@@ -112,7 +112,7 @@ function render() {
         <div style="flex: 1; display: flex; align-items: center;">
             ${showBack ? `<button class="btn btn-icon" style="color:var(--text-main); font-size:1.5rem; padding:0;" id="backBtn">←</button>` : ''}
         </div>
-        <h1 style="margin: 0;">Serve Smart</h1>
+        <h1 style="margin: 0;">Serve Quick Meal</h1>
         <div style="flex: 1;"></div>
     `;
     app.appendChild(header);
@@ -468,3 +468,4 @@ window.resetApp = function () {
 document.addEventListener('DOMContentLoaded', () => {
     render();
 });
+

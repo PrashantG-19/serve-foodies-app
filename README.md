@@ -1,6 +1,6 @@
 # 🚀 Serve Foodies App
 
-[Live Demo](https://prashantg-19.github.io/serve-quickmeal-app/) 🌐
+[Live Demo](https://prashantg-19.github.io/serve-foodies-app/) 🌐
 
 Serve Foodies is a **web application** that helps users access and interact with key services **efficiently and intuitively** via a polished online interface. Whether it’s booking, service discovery, task tracking, or managing workflows, this app aims to simplify everyday tasks with a responsive and user-friendly experience.
 
